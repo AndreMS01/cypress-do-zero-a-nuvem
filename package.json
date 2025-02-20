@@ -13,6 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/wlsf82/cypress-do-zero-a-nuvem.git"
   },
+  
+  "devDependencies": {
+  "cypress": "^13.12.0"
+},
+
   "keywords": [
     "Testing",
     "Cypress.io",
@@ -26,3 +31,4 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme"
 }
+
