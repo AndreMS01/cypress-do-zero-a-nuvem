@@ -1,28 +1,14 @@
 name: End-to-end tests
-
-on:
-  push:
-    branches:
-      - main  # ou a branch que você está usando
-
+on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # ou a versão que você estiver usando no seu projeto
-
-      - name: Install dependencies
-        run: npm install  # ou npm ci, se preferir
-
-      - name: Run Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          record: false  # Use `true` se for necessário gravar os testes no Dashboard do Cypress
-          publish-summary: true  # Habilita o sumário de testes após a execução
+          command: npm run test:cloud
