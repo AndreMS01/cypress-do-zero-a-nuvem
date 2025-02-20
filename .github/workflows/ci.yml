@@ -21,4 +21,6 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           command: npm run test:cloud
-          
+      - name: Debug CYPRESS_RECORD_KEY
+        run: echo "CYPRESS_RECORD_KEY=$CYPRESS_RECORD_KEY"
+     
